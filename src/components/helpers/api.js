@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export class TheMovieDbAPI {
   static BASE_URL = 'https://api.themoviedb.org/3';
-  static API_KEY = '1deae1a36202e3ac8c29219a3d453e0f';
+  static API_KEY = '33d0983e62044b5031a4209ee23a22d7';
   static IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
   constructor() {

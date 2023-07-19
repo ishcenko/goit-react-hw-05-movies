@@ -16,7 +16,7 @@ export function Cast() {
       try {
         const { data } = await theMovieDbAPI.getCastInfo(moviesId);
 
-        if (data.casr.length === 0) {
+        if (data.cast.length === 0) {
           setError('Oooops! There is no cast info');
         } else {
           setCast(data.cast);
@@ -26,7 +26,9 @@ export function Cast() {
         setError(error.message);
       }
     };
+    getCast();
   }, [moviesId]);
+
   return (
     <Block>
       <Title>Cast</Title>
@@ -42,7 +44,7 @@ export function Cast() {
               <Loader />
             )}
             <h4>{cast.name}</h4>
-            <Text>Character: {cast.character} </Text>
+            <Text>Character: {cast.character}</Text>
           </CastItem>
         ))}
       </CastList>

@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Input, Button } from './SearchForm.styled';
 
-function SearchForm({ onSubmit, defayltValue }) {
-  const searchRef = useRef();
+function SearchForm({ onSubmit, defaultValue }) {
+  const searhRef = useRef();
+
   const handleSubmitForm = event => {
     event.preventDefault();
-    onSubmit(searchRef.current.value);
+
+    onSubmit(searhRef.current.value);
   };
+
   return (
     <Form onSubmit={handleSubmitForm}>
-      <Input defayltValue={defayltValue} ref={searchRef} type="text" required />
+      <Input defaultValue={defaultValue} ref={searhRef} type="text" required />
       <Button>Search</Button>
     </Form>
   );
 }
 
 SearchForm.propTypes = {
-  defayltValue: PropTypes.string,
+  defaultValue: PropTypes.string,
   onSubmit: PropTypes.func,
 };
 

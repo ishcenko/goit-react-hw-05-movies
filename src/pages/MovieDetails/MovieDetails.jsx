@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { TheMovieDbAPI } from 'components/helpers/api';
 import { useParams, Routes, Route, useLocation } from 'react-router-dom';
 import { Cast } from 'pages/Cast/Cast';
+import { Reviews } from 'pages/Reviews/Reviews';
 import { Loader } from 'components/Loader/Loader';
-import { Reviews } from './pages/Reviews/Reviews';
 import {
   Block,
   Image,
@@ -20,13 +20,14 @@ function MovieDetails() {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState({});
   const [error, setError] = useState('');
+
   const location = useLocation();
-  const goBackLink = location?.state?.form ?? '/';
+  const goBackLink = location?.state?.from ?? '/';
 
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const { data } = await theMovieDbAPI.getMomieInfoById(moviesId);
+        const { data } = await theMovieDbAPI.getMovieInfoById(moviesId);
         setMovie(data);
       } catch (error) {
         setError(error.message);
@@ -36,6 +37,7 @@ function MovieDetails() {
   }, [moviesId]);
 
   const { poster_path, title, vote_average, genres, overview } = movie;
+
   return (
     <>
       <LinkStyled to={goBackLink}>Go back</LinkStyled>
@@ -48,14 +50,14 @@ function MovieDetails() {
           )}
           <InfoBlock>
             <h1>{title}</h1>
-            <p>Use score: {Math.round(vote_average * 10)}%</p>
+            <p>User score: {Math.round(vote_average * 10)} %</p>
             <p>
-              <b>Overview</b>
+              <b>Overview: </b>
               {overview}
             </p>
             {genres && (
               <p>
-                <b>Genres:</b>
+                <b>Genres: </b>
                 {genres.map(genre => genre.name).join(', ')}
               </p>
             )}
@@ -82,6 +84,7 @@ function MovieDetails() {
           </NavLinkStyled>
         </li>
       </ul>
+
       <Routes>
         <Route path="cast" element={<Cast />} />
         <Route path="reviews" element={<Reviews />} />

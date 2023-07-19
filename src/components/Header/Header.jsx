@@ -1,5 +1,12 @@
 import { Outlet } from 'react-router-dom';
 
+import {
+  HeaderWrapper,
+  LinkWrapper,
+  NavBar,
+  NavLinkStyled,
+} from './Header.styled';
+
 export const Header = () => {
   return (
     <>
