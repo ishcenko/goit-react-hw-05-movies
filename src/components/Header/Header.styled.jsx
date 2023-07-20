@@ -26,6 +26,7 @@ export const NavLinkStyled = styled(NavLink)`
   color: black;
   font-size: 20px;
   font-weight: 700;
+  padding: 12px 22px;
   border: 2px solid yellowgreen;
   border-radius: 19px;
   text-transform: uppercase;
@@ -37,8 +38,8 @@ export const NavLinkStyled = styled(NavLink)`
 
   &.active {
     color: #0df409;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 16px 24px;
+    border-radius: 19px;
     pointer-events: none;
     text-decoration: underline;
   }
