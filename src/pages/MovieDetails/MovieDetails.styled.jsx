@@ -46,4 +46,7 @@ export const LinkStyled = styled(Link)`
 `;
 export const NavLinkStyled = styled(NavLink)`
   margin-left: 50px;
+  margin-top: 30px;
+  font-size: 20px;
+  border-bottom: 2px solid blueviolet;
 `;
