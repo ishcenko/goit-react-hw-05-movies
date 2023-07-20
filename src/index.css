@@ -1,4 +1,4 @@
- /* bring in normalize.css styles */
+/* bring in normalize.css styles */
 @import-normalize;
 body {
   margin: 0;
@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #25aae1, #63d19c, #65f4af, #11fb86);
+  box-shadow: 0 4px 15px 0 rgba(6, 64, 62, 0.75);
 }
 
 code {
