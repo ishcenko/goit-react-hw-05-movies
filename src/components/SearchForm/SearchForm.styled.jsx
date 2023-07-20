@@ -8,14 +8,14 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  border: 2px solid #ccc;
+  border: 2px solid #22ba76;
   padding: 10px;
   font-size: 16px;
   flex: 1;
 `;
 
 export const Button = styled.button`
-  background-color: #f39c1c;
+  background-color: #3ce889;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -26,6 +26,6 @@ export const Button = styled.button`
   margin-left: 10px;
   cursor: pointer;
   &:hover {
-    background-color: #818080;
+    background-color: #32a6e3;
   }
 `;

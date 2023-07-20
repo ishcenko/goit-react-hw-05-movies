@@ -8,7 +8,14 @@ export const NavBar = styled.header`
   padding-bottom: 20px;
   margin-bottom: 40px;
   height: 30px;
-  background-color: #353d46ba;
+  background-color: linear-gradient(
+    to right,
+    #009245,
+    #fcee21,
+    #00a8c5,
+    #d9e021
+  );
+  box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
 `;
 
 export const HeaderWrapper = styled.div`
@@ -18,18 +25,17 @@ export const HeaderWrapper = styled.div`
 
 export const NavLinkStyled = styled(NavLink)`
   color: black;
-
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   &:hover,
   &:focus {
-    color: orange;
+    color: #120375;
   }
 
   &.active {
-    color: orange;
+    color: #0df409;
     padding: 6px 12px;
     border-radius: 4px;
     pointer-events: none;
