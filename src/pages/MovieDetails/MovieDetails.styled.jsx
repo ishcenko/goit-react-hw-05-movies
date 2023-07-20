@@ -49,4 +49,5 @@ export const NavLinkStyled = styled(NavLink)`
   margin-top: 30px;
   font-size: 20px;
   border-bottom: 2px solid blueviolet;
+  text-decoration: none;
 `;
